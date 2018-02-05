@@ -1,0 +1,14 @@
+#!/bin/bash
+project='{"name":"'
+project+=$(basename $(pwd))
+project+='","description":"'
+project+=$(basename $(pwd))
+project+='"}'
+project2='git@github.com:tbsoft57/'
+project2+=$(basename $(pwd))
+git init
+git add --all
+git commit -m 'First commit'
+curl -u 'tbsoft57' https://api.github.com/user/repos -d $project
+git remote add origin $project2
+git push origin master
