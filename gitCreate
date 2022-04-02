@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "# ReadMe" >> README.md
 project='{"name":"'
 project+=$(basename $(pwd))
 project+='","description":"'
